@@ -1,0 +1,54 @@
+﻿@using DataAccess.Models;
+@model Employee
+
+<form asp-action="AddEmployee">
+    <div class="mb-3">
+        <label>Ad: </label>
+        <input asp-for=FirstName type="text" />
+    </div>
+    <div class="mb-3">
+        <label>Soyad: </label>
+        <input asp-for=LastName type="text" />
+    </div>
+    <div class="mb-3">
+        <label>Ünvan: </label>
+        <input asp-for=Title type="text" />
+    </div>
+    <div class="mb-3">
+        <label>Nezaket Kısaltması: </label>
+        <input asp-for=TitleOfCourtesy type="text" />
+    </div>
+    <div class="mb-3">
+        <label>Doğum Tarihi: </label>
+        <input asp-for="BirthDate" type="date" />
+    </div>
+    <div class="mb-3">
+        <label>Başlangıç Tarihi: </label>
+        <input asp-for="HireDate" type="date" />
+    </div>
+    <div class="mb-3">
+        <label>Adres: </label>
+        <input asp-for="Address" type="text" />
+    </div>
+    <div class="mb-3">
+        <label>Şehir: </label>
+        <input asp-for="City" type="text" />
+    </div>
+    <div class="mb-3">
+        <label>Bölge: </label>
+        <input asp-for="Region" type="text" />
+    </div>
+    <div class="mb-3">
+        <label>Posta Kodu: </label>
+        <input asp-for="PostalCode" type="text" />
+    </div>
+    <div class="mb-3">
+        <label>Ülke: </label>
+        <input asp-for="Country" type="text" />
+    </div>
+    <div class="mb-3">
+        <label>Ev Telefonu: </label>
+        <input asp-for="HomePhone" type="text" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

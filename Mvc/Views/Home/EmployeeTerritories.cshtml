@@ -1,0 +1,19 @@
+﻿@using DataAccess.Models;
+@model GetEmployeeTerritoriesDto
+
+<h3>@(Model.FirstName + " " + Model.LastName) adlı personelin bölgeleri</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Bölge Adı</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.GetTerritoriesDto)
+        {
+            <tr>
+                <th>@item.TerritoryDescription</th>
+            </tr>
+        }
+    </tbody>
+</table>

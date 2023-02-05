@@ -1,0 +1,29 @@
+﻿@model List<GetAllEmployeesDto>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Ünvanı</th>
+            <th>Siparişler</th>
+            <th>Sorumlu Olduğu Bölgeler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.FirstName</th>
+                <th>@item.LastName</th>
+                <th>@item.Title</th>
+                <th><a asp-action="OrderDetail" asp-route-employeeId="@item.EmployeeId">Sipariş</a></th>
+                <th><a asp-action="EmployeeTerritories" asp-route-employeeId="@item.EmployeeId">Bölgeler</a></th>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,18 @@
+﻿@model List<GetProductDto>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ürün Adı</th>
+            <th>Ürün Adedi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.ProductName</th>
+                <th>@item.Quantity</th>
+            </tr>
+        }
+    </tbody>
+</table>

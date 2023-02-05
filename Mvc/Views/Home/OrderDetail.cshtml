@@ -1,0 +1,33 @@
+﻿@model List<GetOrderDetailsDto>
+
+@if(Model.Count > 0){
+
+@*<h3>@(Model[0].EmployeeFirstName + " " +Model[0].EmployeeLastName) adlı personelin sorumlu olduğu siparişler</h3>*@
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Sipariş No</th>
+            <th>Sipariş Tarihi</th>
+            <th>Gönderildiği Ülke</th>
+            <th>Sipariş Tutarı</th>
+            <th>Ürünler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.OrderId</th>
+                <th>@item.OrderDate</th>
+                <th>@item.ShipCountry</th>
+                <th>@item.Amount</th>
+                <th><a asp-controller="Order" asp-action="OrderDetails" asp-route-orderId="@item.OrderId">Sipariş Detayları</a></th>
+            </tr>
+        }
+    </tbody>
+</table>
+}
+else{
+    <h3>Herhangi bir kayıt bulunamadı</h3>
+}
